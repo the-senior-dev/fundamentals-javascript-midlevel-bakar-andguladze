@@ -13,7 +13,16 @@ either all at once or one at a time. For example:
 
 // HINT: You will need to use recursion to solve this problem!
 function curry(fn) {
-    // Your code here
+    return function curried(...args) {
+        if(args.length >= fn.length) {
+            return fn(...args);
+        }
+        else {
+            return function(...moreArgs) {
+                return curried(...args, ...moreArgs);
+            }
+        }
+    }
 }
   
 
