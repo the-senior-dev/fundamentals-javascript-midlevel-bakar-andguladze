@@ -17,11 +17,11 @@ function curry(fn) {
         if(args.length >= fn.length) {
             return fn(...args);
         }
-        else {
-            return function(...moreArgs) {
-                return curried(...args, ...moreArgs);
-            }
+
+        return function(...moreArgs) {
+            return curried(...args, ...moreArgs);
         }
+
     }
 }
   
