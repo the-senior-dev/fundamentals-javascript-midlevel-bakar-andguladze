@@ -9,7 +9,14 @@
 // curriedAdd(1)(2); // 3
 
 function curry(fn) {
-    // Your implementation here
+    return function curried1(a) {
+        return function curried2(b) {
+            return fn(a, b);
+        }
+    }
 }
 
+const curriedAdd = curry((a, b) => a + b);
+
+console.log(curriedAdd(3)(4))
 module.exports = curry;
